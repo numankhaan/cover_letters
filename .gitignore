@@ -1,0 +1,15 @@
+# LaTeX build output
+build/
+
+# Common LaTeX aux files if they appear in root
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
