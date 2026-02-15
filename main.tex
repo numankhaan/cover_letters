@@ -6,11 +6,23 @@
 \documentclass[12pt]{letter}
 \usepackage[utf8]{inputenc}
 \usepackage[empty]{fullpage}
-\usepackage[hidelinks]{hyperref}
 \usepackage{graphicx}
 \usepackage{fontawesome5}
 \usepackage{eso-pic}
+\usepackage{tabularx}
 \usepackage{charter}
+\usepackage{array}
+
+\usepackage{xcolor}
+\usepackage[
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=black,
+    citecolor=black
+]{hyperref}
+% make links underlined and black
+\let\oldhref\href
+\renewcommand{\href}[2]{\oldhref{#1}{\underline{#2}}}
 
 \addtolength{\topmargin}{-0.5in}
 \addtolength{\textheight}{1.0in}
@@ -28,15 +40,19 @@
 
 % Header
 \begin{center}
-{\fontsize{28}{0}\selectfont\scshape \myname}
+{\fontsize{28}{32}\selectfont\scshape \myname}
 
-\href{mailto:\myemail}{\faEnvelope\enspace \myemail}\hfill
-\href{https://linkedin.com/in/\mylinkedin}{\faLinkedinIn\enspace linkedin.com/in/\mylinkedin}\hfill
-\href{tel:\myphone}{\faPhone\enspace \myphone}\hfill
-\faMapMarker\enspace \mylocation
+\vspace{8pt}
+
+\small
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} l l l l}
+\mbox{\href{mailto:\myemail}{\faEnvelope\enspace \myemail}} &
+\mbox{\href{https://www.linkedin.com/in/nouman-ali-khan/}{\faLinkedinIn\enspace \mylinkedin}} &
+\mbox{\href{tel:\myphone}{\faPhone\enspace \myphone}} &
+\mbox{\faMapMarker\enspace \mylocation}
+\end{tabular*}
 \end{center}
 
-\vspace{0.2in}
 
 % Opening block
 \today\\
